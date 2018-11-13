@@ -1,0 +1,12 @@
+#set($wi = $trackerService.getWorkItem(<PROJECT ID>, <WORKITEM ID>))
+
+#foreach($assignee in $wi.getAssignees())
+    #set($assigneeID = $assignee.getId())
+#end
+
+$transactionService.beginTx()
+    #if(!$wi.getCustomField(<CUSTOM FIELD ID>))
+        $wi.setCustomField(<CUSTOM FIELD ID>,$assigneeID)
+    #end
+    $wi.save()
+$transactionService.endTx(false)
