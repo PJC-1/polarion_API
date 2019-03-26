@@ -7,31 +7,24 @@
 ## start table
 <table class="polarion-rpw-table-content">
     ## header table row
-    <tr class="polarion-rpw-table-header-row"><th>Defect Created</th><th>Date Executed</th><th>Executed By</th><th>Results</th><th>Signed</th><th>Test Case ID</th></tr>
+    <tr class="polarion-rpw-table-header-row">
+        <th>Defect Created</th>
+        <th>Date Executed</th>
+        <th>Executed By</th>
+        <th>Results</th>
+        <th>Signed</th>
+        <th>Test Case ID</th>
+    </tr>
     ## iterate over all test records
     #foreach($record in $itestRun.getRecords())
     ## content table row
     <tr class="polarion-rpw-table-content-row">
-        ## table cell
-        <td>
-            $record.getDefect().getId()
-        </td>
-        <td>
-            $record.getExecuted()
-        </td>
-        <td>
-            $record.getExecutedBy().getId()
-        </td>
-        <td>
-            $record.getResult().getName()
-        </td>
-        <td>
-            $record.isSigned()
-        </td>
-        <td>
-            $record.getTestCase().getId()
-        </td>
-    ## end of table row
+        <td>$record.getDefect().getId()</td>
+        <td>$record.getExecuted()</td>
+        <td>$record.getExecutedBy().getId()</td>
+        <td>$record.getResult().getName()</td>
+        <td>$record.isSigned()</td>
+        <td>$record.getTestCase().getId()</td>
     </tr>
     #end
 ## end of test records table

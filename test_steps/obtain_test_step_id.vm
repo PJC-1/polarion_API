@@ -1,4 +1,4 @@
-#set($wi = $trackerService.getWorkItem($page.project,"WEN-7470"))
+#set($wi = $trackerService.getWorkItem("<PROJECT_ID>", "<WORKITEM_ID>"))
 #set($steps = $wi.getTestCase().getTestSteps().getSteps())
 #set($counter = 0)
 

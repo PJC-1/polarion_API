@@ -1,24 +1,24 @@
 #set($examplePageParameter= $pageParameters.example)
 
 {
-   chart: {
-       type: 'line'
-   },
-   title: {
-       text: 'Scripted Chart Highchart Example'
-   },
-   xAxis: {
-       type: 'datetime'
-   },
-   yAxis: {
-       min: 0
-   },
-   series: [{
-       name: 'Example',
-       data: [$examplePageParameter.value]
-   },
-   {
-      name: 'Hardcoded Example',
-       data: [1000]
-   }]
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Scripted Chart Highchart Example'
+    },
+    xAxis: {
+        type: 'datetime'
+    },
+    yAxis: {
+        min: 0
+    },
+    series: [{
+        name: 'Example',
+        data: [$examplePageParameter.value]
+    },
+    {
+        name: 'Hardcoded Example',
+        data: [1000]
+    }]
 }

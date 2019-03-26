@@ -1,4 +1,4 @@
-#set($wi = $trackerService.getWorkItem(<PROJECT ID>, <WORKITEM ID>))
+#set($wi = $trackerService.getWorkItem(<"PROJECT_ID">, <"WORKITEM_ID">))
 
 #foreach($assignee in $wi.getAssignees())
     #set($assigneeID = $assignee.getId())
