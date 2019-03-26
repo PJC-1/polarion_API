@@ -1,0 +1,25 @@
+#set($wi = $trackerService.getWorkItem($page.project,"WEN-7470"))
+#set($steps = $wi.getTestCase().getTestSteps().getSteps())
+#set($counter = 0)
+
+## start table
+<table class="polarion-rpw-table-content">
+    ## header table row
+    <tr class="polarion-rpw-table-header-row">
+        <th>Step</th>
+        <th>Description</th>
+        <th>Result</th>
+    </tr>
+
+    #foreach($step in $steps)
+        ## content table row
+        <tr class="polarion-rpw-table-content-row">
+            ## table cell
+            <td>$steps.get($counter).getValues().get(0).getContent()</td>
+            <td>$steps.get($counter).getValues().get(1).getContent()</td>
+            <td>$steps.get($counter).getValues().get(2).getContent()</td>
+        </tr>
+        ## increment the $counter variable
+        #set($counter = $counter + 1)
+    #end
+</table>
