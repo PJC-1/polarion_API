@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories>
+    <default>
+        <id>default</id>
+        <name>Default</name>
+    </default>
+    <git>
+        <id>git_repo_001</id>
+        <name>git_repo_001</name>
+        <localRepository>C:\Users\testUser\path\to\repository\testRepo\.git</localRepository>
+        <isMaster>false</isMaster>
+        <viewURL>https://github.com/testUser/testRepo/commit/$revision$</viewURL>
+        <viewLocationURL>https://github.com/testUser/testRepo/blob/$revision$/$location$</viewLocationURL>
+        <viewLocationDiffURL>https://github.com/testUser/testRepo/commit/$revision$</viewLocationDiffURL>
+    </git>
+</repositories>
