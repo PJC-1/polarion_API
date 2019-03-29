@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resource-traceability>
+    <categories>
+        <category id="rt_test" name="RT Test">
+            <repositories>
+                <repositoryConfiguration id="git_repo_001" repository="git_repo_001">
+                    <branches>
+                        <branch id="master" path=""/>
+                    </branches>
+                    <paths>
+                    </paths>
+                </repositoryConfiguration>
+            </repositories>
+            <schedulers>
+                <scheduler cron="0 */60 * * * *"/>
+            </schedulers>
+            <fileParsers>
+                <fileParser extensions=".java" id="javaParser" name="com.siemens.polarion.rt.parsers.java">
+                </fileParser>
+            </fileParsers>
+        </category>
+    </categories>
+</resource-traceability>
