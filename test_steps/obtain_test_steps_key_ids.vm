@@ -1,0 +1,6 @@
+#set($wi = $trackerService.getWorkItem($page.project,"<WORKITEM_ID>"))
+#set($testStepsKeys = $wi.getTestCase().getTestSteps().getKeys())
+
+#foreach($testStepsKey in $testStepsKeys)
+    $testStepsKey.getId()<br>
+#end
