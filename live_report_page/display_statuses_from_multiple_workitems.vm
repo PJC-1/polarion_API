@@ -1,0 +1,20 @@
+#set($statuses1 = $transaction.enumerations.getEnumeration("status").forType("<WORKITEM_TYPE_ID>").forProject(<PROJECT_ID>).options)
+#set($statuses2 = $transaction.enumerations.getEnumeration("status").forType("<WORKITEM_TYPE_ID>").forProject(<PROJECT_ID>).options)
+
+#set($arr = [])
+
+#foreach($item in $statusList1)
+    #set($buffer = $arr.add($item))
+#end
+
+#foreach($item in $statusList2)
+    #if($arr.contains($item) == true)
+
+    #else
+        #set($buffer = $arr.add($item))
+    #end
+#end
+
+#foreach($status in $arr)
+    $status.render() #count("status:$status.id AND $planQuery") <br>
+#end
