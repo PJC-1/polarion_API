@@ -1,0 +1,6 @@
+#set($testStepsKeys = $testManagementService.getTestStepsKeys("<PROJECT_ID>"))
+
+#foreach($testStepKey in $testStepsKeys)
+    $testStepKey.getId
+    <br>
+#end
