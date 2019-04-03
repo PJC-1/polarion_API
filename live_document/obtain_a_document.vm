@@ -1,0 +1,10 @@
+#set($project_id = $page.getProject())
+#set($project_location = $trackerService.getTrackerProject($project_id).getLocation())
+#set($project = $projectService.getProject($project_id))
+
+#set($input_document_path = "<DOCUMENT_SPACE_ID>/<DOCUMENT_ID>")
+#set($document_location = $project.location.getLocation($input_document_path))
+#set($modified_document_location = $project.getLocation().append($input_document_path))
+#set($document = $trackerService.getModuleManager().getModule($project, $document_location))
+
+$document
