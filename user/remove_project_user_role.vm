@@ -7,7 +7,7 @@
 #set ($users = $securityService.getUsersForContextRole($role , $contextID))
 
 $transactionService.beginTx()
-#foreach ($user in $users)
-    $securityService.removeContextRoleFromUser($user, $role, $contextID)
-#end
+    #foreach ($user in $users)
+        $securityService.removeContextRoleFromUser($user, $role, $contextID)
+    #end
 $transactionService.endTx(false)
