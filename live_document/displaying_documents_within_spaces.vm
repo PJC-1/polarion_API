@@ -1,0 +1,22 @@
+#set($folder_manager = $trackerService.getFolderManager())
+#set($module_manager = $trackerService.getModuleManager())
+
+#set($project_id = $page.getProject())
+#set($project = $projectService.getProject($project_id))
+#set($project_location = $trackerService.getTrackerProject($project_id).getLocation())
+#set($relative_project_location = $project_location.getRelativeLocation($project_location))
+#set($document_spaces = $folder_manager.getFolders($project_id))
+
+#foreach($document_space in $document_spaces)
+    #set($document_space_name = $document_space.getName())
+    #set($document_space_relative_location = $relative_project_location.append($document_space_name))
+
+    <h4> Document Space Name: $document_space_name </h4>
+
+    #set($documents_in_space = $module_manager.getModules($project, $document_space_relative_location))
+
+    #foreach($document in $documents_in_space)
+        #set($document_name = $document.getModuleName())
+        <p> Document Name: $document_name </p>
+    #end
+#end
