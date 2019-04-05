@@ -1,5 +1,5 @@
-#set($wi = $trackerService.getWorkItem("<PROJECT_ID>", "<WORKITEM_ID>"))
-#set($steps = $wi.getTestCase().getTestSteps().getSteps())
+#set($workitem = $trackerService.getWorkItem("<PROJECT_ID>", "<WORKITEM_ID>"))
+#set($test_steps = $workitem.getTestCase().getTestSteps().getSteps())
 #set($counter = 0)
 
 <table class="polarion-rpw-table-content">
@@ -8,12 +8,12 @@
         <th>Description</th>
         <th>Result</th>
     </tr>
-    #foreach($step in $steps)
+    #foreach($test_step in $test_steps)
         <tr class="polarion-rpw-table-content-row">
             ## table cell
-            <td>$steps.get($counter).getValues().get(0).getContent()</td>
-            <td>$steps.get($counter).getValues().get(1).getContent()</td>
-            <td>$steps.get($counter).getValues().get(2).getContent()</td>
+            <td>$test_steps.get($counter).getValues().get(0).getContent()</td>
+            <td>$test_steps.get($counter).getValues().get(1).getContent()</td>
+            <td>$test_steps.get($counter).getValues().get(2).getContent()</td>
         </tr>
         #set($counter = $counter + 1)
     #end

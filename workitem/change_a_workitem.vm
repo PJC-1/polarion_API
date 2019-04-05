@@ -1,7 +1,7 @@
-$transactionService.beginTx()
-    #set($wi_change=$trackerService.getWorkItem($page.project,<"WORKITEM_ID">))
-    #set($prefix="Prefix")
+#set($workitem = $trackerService.getWorkItem("<PROJECT_ID>", "<WORKITEM_ID>"))
+#set($prefix ="Prefix")
 
-    $wi_change.setTitle($prefix.concat($wi_change.title))
-    $wi_change.save()  
+$transactionService.beginTx()
+  $workitem.setTitle($prefix.concat($wi_change.title))
+  $workitem.save()  
 $transactionService.commitTx()

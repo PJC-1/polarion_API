@@ -1,13 +1,13 @@
-#set($securityService = $trackerService.getDataService().getSecurityService())
+#set($security_service = $trackerService.getDataService().getSecurityService())
 
-#set ($role = "<PROJECT_USER_ROLE>")
-#set ($projectID = "<PROJECT_ID>")
-#set ($project = $projectService.getProject($projectID))
-#set ($contextID = $project.getContextId())
-#set ($users = $securityService.getUsersForContextRole($role , $contextID))
+#set ($user_role = "<PROJECT_USER_ROLE>")
+#set ($project_id = "<PROJECT_ID>")
+#set ($project = $projectService.getProject($project_id))
+#set ($context_id = $project.getContextId())
+#set ($users = $security_service.getUsersForContextRole($user_role , $context_id))
 
 $transactionService.beginTx()
     #foreach ($user in $users)
-        $securityService.removeContextRoleFromUser($user, $role, $contextID)
+        $security_service.removeContextRoleFromUser($user, $user_role, $context_id)
     #end
 $transactionService.endTx(false)

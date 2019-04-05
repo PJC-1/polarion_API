@@ -1,6 +1,6 @@
-#set($testStepsKeys = $testManagementService.getTestStepsKeys("<PROJECT_ID>"))
+#set($test_steps_keys = $testManagementService.getTestStepsKeys("<PROJECT_ID>"))
 
-#foreach($testStepKey in $testStepsKeys)
-    $testStepKey.getId
+#foreach($test_step_key in $test_steps_keys)
+    $test_step_key.getId
     <br>
 #end
