@@ -1,6 +1,6 @@
 #set ($project = $trackerService.getTrackerProject("<PROJECT_ID>"))
 #set ($context_id = $project.getcontext_id())
-#set ($test_run = $testManagementService.getTestRun($project.getId, "<TEST_RUN_ID>")
+#set ($test_run = $testManagementService.getTestRun($project.getId, "<TEST_RUN_ID>"))
 
 <h1>Test Records Table</h1>
 <table class="polarion-rpw-table-content">
