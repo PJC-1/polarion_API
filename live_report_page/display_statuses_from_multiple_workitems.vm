@@ -16,5 +16,5 @@
 #end
 
 #foreach($status in $all_statuses)
-    $status.render() #count("status:$status.id AND $planQuery") <br>
+    $status.render() <br>
 #end
