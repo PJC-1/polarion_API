@@ -1,0 +1,7 @@
+#set($security_service = $securityService)
+#set($login_user = "<USER_ID>")
+#set($login_password = "<USER_PASSWORD>")
+
+#set($subject_user = $security_service.login($login_user, $login_password, "system"))
+
+$subject_user
