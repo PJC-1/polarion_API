@@ -1,4 +1,4 @@
-#set($security_service = $securityService)
+#set($security_service = $trackerService.getDataService().getSecurityService())
 #set($login_user = "<USER_ID>")
 #set($login_password = "<USER_PASSWORD>")
 

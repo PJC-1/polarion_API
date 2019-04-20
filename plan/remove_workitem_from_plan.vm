@@ -1,0 +1,15 @@
+#set($planning_manager = $trackerService.getPlanningManager())
+
+$transactionService.beginTx()
+
+#set($plan = $planning_manager.getPlan("<PROJECT_ID>", "<PLAN_ID>", null))
+#set($workitems_hash_set = $plan.getItems())
+
+#foreach($workitem in $workitems_hash_set)
+    #if($workitem.getId() == "<WORKITEM_ID>")
+      	$plan.removeRecord($workitem)
+      	$plan.save
+    #end
+#end
+
+$transactionService.endTx(false)
