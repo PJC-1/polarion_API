@@ -2,6 +2,6 @@
 #set($prefix ="Prefix")
 
 $transactionService.beginTx()
-  $workitem.setTitle($prefix.concat($wi_change.title))
-  $workitem.save()  
+    $workitem.setTitle($prefix.concat($wi_change.title))
+    $workitem.save()  
 $transactionService.commitTx()

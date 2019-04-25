@@ -4,5 +4,8 @@
 #set($input_document_path = "<DOCUMENT_SPACE_NAME>/<DOCUMENT_TITLE>")
 #set($document_location = $project.location.getLocation($input_document_path))
 #set($document = $trackerService.getModuleManager().getModule($project, $document_location))
+#set($document_history = $trackerService.getDataService().getObjectHistory($document))
 
-$document
+#foreach($history in $document_history)
+    * $history
+#end
