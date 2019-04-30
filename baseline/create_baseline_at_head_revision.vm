@@ -1,15 +1,18 @@
+################################################################################
+## This example assumes Wiki Scripting Tools Polarion Extension is installed  ##
+## URL: http://extensions.polarion.com/extensions/83-wiki-scripting-tools     ##
+################################################################################
+
 #set ($repository_service = $polarionTool.repositoryService)
 #set ($security_service = $trackerService.getDataService().getSecurityService())
 #set ($project_id = "<PROJECT_ID>")
 #set ($project = $projectService.getProject($project_id))
-#set ($context_id = $project.getContextId())
-#set ($data_service = $trackerService.getDataService())
 #set ($tracker_project = $trackerService.getTrackerProject($project_id))
+#set ($location = $project.getLocation())
 #set ($baselines_manager = $tracker_project.getBaselinesManager())
 
 $transactionService.beginTx()
     #set ($repository_service = $polarionTool.repositoryService)
-    #set ($location = $project.getLocation())
     #set ($repository_connection = $repository_service.getConnection($location))
     #set ($current_revision = $repository_connection.getCurrentRepositoryState())
     #set ($current_date = $dateTool.get('yyyy-M-d-H:m:s'))
