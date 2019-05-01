@@ -2,7 +2,7 @@
 
 <script>
     function create_test_run() {
-        top.createCreateTestRun($project_id, "example id", null);
+        top.createTestRun("$project_id", "example id", null);
     }
 </script>
 
