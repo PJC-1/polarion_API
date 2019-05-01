@@ -1,0 +1,9 @@
+#set ($project_id = "<PROJECT_ID>")
+
+<script>
+    function create_test_run() {
+        top.createCreateTestRun($project_id, "example id", null);
+    }
+</script>
+
+<button onclick="javascript:create_test_run();">Create Test Run</button>
