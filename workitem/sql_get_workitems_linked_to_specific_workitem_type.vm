@@ -1,0 +1,16 @@
+#set($sql_query = "SELECT * FROM POLARION.WORKITEM workitem, POLARION.PROJECT project WHERE project.C_ID = '<PROJECT_ID>' AND workitem.C_TYPE = '<WORKITEM_TYPE_ID_1>' AND workitem.FK_PROJECT = project.C_PK AND EXISTS (SELECT b.* FROM POLARION.WORKITEM b, POLARION.STRUCT_WORKITEM_LINKEDWORKITEMS link where link.FK_WORKITEM = b.C_PK AND link.FK_P_WORKITEM = workitem.C_PK AND (b.C_TYPE = '<WORKITEM_TYPE_ID_2>'))")
+
+#set ($workitems = $trackerService.getDataService().sqlSearch($sql_query))
+
+#foreach($workitem in $workitems)
+    <h3>Workitem</h3>
+    <i>$workitem.getId()</i>
+    #set ($linked_workitems = $workitem.getLinkedWorkItemsDirect())
+    <h3>Linked Workitem(s)</h3>
+    #foreach($linked_workitem in $linked_workitems)
+        <i>$linked_workitem.getId()</i>
+        <br>
+    #end
+    <hr>
+    <br>
+#end
