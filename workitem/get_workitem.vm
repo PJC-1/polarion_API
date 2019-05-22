@@ -1,0 +1,3 @@
+#set($workitem = $trackerService.getWorkItem("<PROJECT_ID>", "<WORKITEM_ID>"))
+
+$workitem

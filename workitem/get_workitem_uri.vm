@@ -1,0 +1,5 @@
+#set($workitem = $trackerService.getWorkItem("<PROJECT_ID>", "<WORKITEM_ID>"))
+#set($workitem_object_id = $workitem.getObjectId)
+#set($data_service = $trackerService.getDataService())
+
+$data_service.getSubterraURIForObjectId($workitem_object_id).toURI()
